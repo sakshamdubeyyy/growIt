@@ -49,6 +49,7 @@ const HomepagePage = () => {
                     color="teal_400"
                     size="xs"
                     variant="fill"
+                    onClick={() => navigate("/Contact")}
                   >
                     Get Started
                   </Button>
@@ -663,6 +664,7 @@ const HomepagePage = () => {
                     color="teal_400"
                     size="xs"
                     variant="fill"
+                    onClick={() => navigate("/Contact")}
                   >
                     Get Started
                   </Button>

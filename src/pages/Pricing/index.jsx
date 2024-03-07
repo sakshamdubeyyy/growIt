@@ -73,6 +73,7 @@ const PricingPage = () => {
                     color="teal_401"
                     size="xs"
                     variant="fill"
+                    onClick={() => navigate("/Contact")}
                   >
                     Get Started
                   </Button>
@@ -190,6 +191,7 @@ const PricingPage = () => {
                     color="teal_401"
                     size="xs"
                     variant="fill"
+                    onClick={() => navigate("/Contact")}
                   >
                     Try for free
                   </Button>
@@ -308,6 +310,7 @@ const PricingPage = () => {
                     color="teal_401"
                     size="xs"
                     variant="fill"
+                    onClick={() => navigate("/Contact")}
                   >
                     Contact Sales
                   </Button>
@@ -886,6 +889,7 @@ const PricingPage = () => {
                   color="teal_400"
                   size="xs"
                   variant="fill"
+                  onClick={() => navigate("/Contact")}
                 >
                   Get Started
                 </Button>

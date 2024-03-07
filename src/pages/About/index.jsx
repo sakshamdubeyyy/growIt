@@ -451,6 +451,7 @@ const AboutPage = () => {
                   color="teal_400"
                   size="xs"
                   variant="fill"
+                  onClick={() => navigate("/Contact")}
                 >
                   Get Started
                 </Button>
