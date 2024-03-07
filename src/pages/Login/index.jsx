@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -6,6 +6,28 @@ import { Button, Img, Input, Line, Text } from "components";
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const[userName, setUserName] = useState('');
+  const[password, setPassword] = useState('');
+  const handleClick = () => {
+    if(userName === 'user' && password === 'password'){
+      navigate("/Homepage");
+      localStorage.setItem('loggedIn','true')
+    }else{
+      alert("Incorrect username or password")
+    }
+  }
+
+  const handleUserChange = (value) => {
+    setUserName(value)
+  }
+
+  const handlePasswordChange = (value) => {
+    setPassword(value)
+  }
+
+
+  console.log(userName)
+
 
   return (
     <>
@@ -39,7 +61,14 @@ const LoginPage = () => {
                       className="p-0 placeholder:text-bluegray-200 text-base text-left w-full"
                       wrapClassName="border border-bluegray-200 border-solid w-full"
                       type="email"
+                      onChange={handleUserChange}
                     ></Input>
+                    <Text
+                      className="text-black-900 text-sm"
+                      size="txtChivoRegular18"
+                    >
+                      Default: 'user'
+                    </Text>
                   </div>
                   <div className="flex flex-col gap-[17px] items-start justify-start rounded-md w-full">
                     <Text
@@ -54,7 +83,14 @@ const LoginPage = () => {
                       className="p-0 placeholder:text-bluegray-200 text-base text-left w-full"
                       wrapClassName="border border-bluegray-200 border-solid w-full"
                       type="password"
+                      onChange={handlePasswordChange}
                     ></Input>
+                    <Text
+                      className="text-black-900 text-sm"
+                      size="txtChivoRegular18"
+                    >
+                      Default: 'password'
+                    </Text>
                   </div>
                 </div>
                 <Button
@@ -63,12 +99,13 @@ const LoginPage = () => {
                   color="teal_400"
                   size="xs"
                   variant="fill"
+                  onClick={handleClick}
                 >
                   Login
                 </Button>
               </div>
               <Text
-                className="mt-6 text-base text-teal-400"
+                className="mt-6 text-base text-teal-400 cursor-pointer"
                 size="txtChivoBold16"
               >
                 Forgot Password?
@@ -91,13 +128,13 @@ const LoginPage = () => {
             <Line className="bg-gray-200 h-px mt-12 w-full" />
             <div className="flex flex-row gap-[23px] items-start justify-center md:ml-[0] ml-[91px] mt-7 w-[61%] md:w-full">
               <Text
-                className="text-base text-bluegray-200"
+                className="text-base text-bluegray-200 cursor-pointer"
                 size="txtChivoRegular16Bluegray200"
               >
                 Terms & Conditions
               </Text>
               <Text
-                className="text-base text-bluegray-200"
+                className="text-base text-bluegray-200 cursor-pointer"
                 size="txtChivoRegular16Bluegray200"
               >
                 Privacy Policy

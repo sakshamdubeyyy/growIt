@@ -45,7 +45,7 @@ const SignUpPage = () => {
                       className="text-black-900 text-lg"
                       size="txtChivoRegular18"
                     >
-                      Firts Name
+                      First Name
                     </Text>
                     <Input
                       name="FormInput"

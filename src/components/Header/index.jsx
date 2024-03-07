@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Button, Img, Text } from "components";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(()=>{
+    let loggedInStatus = localStorage.getItem('loggedIn');
+    if(loggedInStatus === 'true'){
+      setIsLoggedIn(true);
+    }
+  },[]);
+
+  const handleLogout = () => {
+    localStorage.setItem('loggedIn','false')
+  }
+
   return (
     <>
       <header className={props.className}>
@@ -50,7 +63,26 @@ const Header = (props) => {
             </Text>
             </Link>
           </div>
-          <div className="flex md:flex-1 flex-row gap-10 sm:hidden items-center justify-center md:ml-[0] ml-[290px] rounded-md w-[15%] md:w-full">
+          {isLoggedIn ? (<div className="flex md:flex-1 flex-row gap-10 sm:hidden items-center justify-center md:ml-[0] ml-[290px] rounded-md w-[15%] md:w-full">
+          <Text
+              className="text-base text-gray-900"
+              size="txtChivoBold16Gray900"
+            >
+              Welcome user
+            </Text>
+            <Link to="/">
+            <Button
+              className="cursor-pointer font-bold font-chivo min-w-[122px] text-base text-center"
+              shape="round"
+              color="teal_400"
+              size="xs"
+              variant="fill"
+              onClick={handleLogout}
+            >
+              Logout
+            </Button>
+          </Link>
+          </div>) : (<div className="flex md:flex-1 flex-row gap-10 sm:hidden items-center justify-center md:ml-[0] ml-[290px] rounded-md w-[15%] md:w-full">
           <Link to="/">
             <Text
               className="text-base text-gray-900"
@@ -70,7 +102,8 @@ const Header = (props) => {
               Sign Up
             </Button>
           </Link>
-          </div>
+          </div>)}
+          
         </div>
       </header>
     </>

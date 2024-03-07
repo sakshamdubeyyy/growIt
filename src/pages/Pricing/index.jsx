@@ -14,12 +14,12 @@ const PricingPage = () => {
       <div className="bg-white-A700 flex flex-col font-chivo items-center justify-start mx-auto w-full">
         <div className="h-[1056px] md:h-[1470px] sm:h-[2135px] md:px-5 relative w-full">
           <div
-            className="absolute bg-cover bg-no-repeat flex flex-col h-[727px] inset-x-[0] items-center justify-start mx-auto pb-[647px] top-[0] w-full"
+            className="absolute left--10 bg-cover bg-no-repeat flex flex-col h-[727px] inset-x-[0] items-center justify-start ml-[-50px] pb-[647px] top-[0] w-full"
             style={{ backgroundImage: "url('images/img_group862.png')" }}
           >
             <Header className="flex flex-col items-center justify-start w-full" />
           </div>
-          <div className="absolute bottom-[0] flex flex-col md:gap-10 gap-16 inset-x-[0] items-center justify-start mx-auto w-[78%]">
+          <div className="absolute bottom-[0] flex flex-col md:gap-10 gap-16 inset-x-[0] items-center justify-start mx-auto my-[-100px] w-[78%]">
             <div className="flex flex-col gap-4 items-center justify-start">
               <Text
                 className="leading-[58.00px] sm:text-[38px] md:text-[44px] text-[52px] text-center text-gray-900 w-full"
@@ -36,7 +36,7 @@ const PricingPage = () => {
               </Text>
             </div>
             <List
-              className="sm:flex-col flex-row gap-10 grid sm:grid-cols-1 md:grid-cols-2 grid-cols-3 justify-center w-full"
+              className="sm:flex-col flex-row gap-10 grid sm:grid-cols-1 md:grid-cols-2 grid-cols-3 justify-center w-full mt-[100px]"
               orientation="horizontal"
             >
               <div className="md:h-[601px] h-[654px] relative w-full">
@@ -145,7 +145,7 @@ const PricingPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="absolute bg-white-A700 h-[100px] md:h-[50px] inset-x-[0] mx-auto p-[25px] sm:px-5 rounded-md shadow-bs top-[0] w-[100px]">
+                <div className="absolute bg-white-A700 h-[100px] md:h-[50px] inset-x-[0] mx-auto p-[25px] sm:px-5 rounded-md shadow-bs top-[-130px] w-[100px]">
                   <Img
                     className="absolute h-[50px] inset-[0] justify-center m-auto w-[50px]"
                     src="images/img_thumbsup.svg"
@@ -267,7 +267,7 @@ const PricingPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="absolute bg-white-A700 h-[100px] md:h-[50px] inset-x-[0] mx-auto p-[25px] sm:px-5 rounded-md shadow-bs top-[0] w-[100px]">
+                <div className="absolute bg-white-A700 h-[100px] md:h-[50px] inset-x-[0] mx-auto p-[25px] sm:px-5 rounded-md shadow-bs top-[-150px] w-[100px]">
                   <Img
                     className="absolute h-[50px] inset-[0] justify-center m-auto w-[50px]"
                     src="images/img_checkmark_50X50.svg"
@@ -385,7 +385,7 @@ const PricingPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="absolute bg-white-A700 h-[100px] md:h-[50px] inset-x-[0] mx-auto p-[25px] sm:px-5 rounded-md shadow-bs top-[0] w-[100px]">
+                <div className="absolute bg-white-A700 h-[100px] md:h-[50px] inset-x-[0] mx-auto p-[25px] sm:px-5 rounded-md shadow-bs top-[-130px] w-[100px]">
                   <Img
                     className="absolute h-[50px] inset-[0] justify-center m-auto w-[50px]"
                     src="images/img_plus.svg"
@@ -396,7 +396,7 @@ const PricingPage = () => {
             </List>
           </div>
         </div>
-        <div className="flex flex-col gap-[50px] items-center justify-start max-w-[1112px] mt-[100px] mx-auto md:px-5 w-full">
+        <div className="flex flex-col gap-[50px] items-center justify-start max-w-[1112px] mt-[150px] mx-auto md:px-5 w-full">
           <div className="flex flex-col gap-4 items-center justify-start">
             <Text
               className="sm:text-[34px] md:text-[40px] text-[44px] text-gray-900"
@@ -749,7 +749,7 @@ const PricingPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-12 items-center justify-start max-w-[920px] mt-[137px] mx-auto md:px-5 w-full">
+        {/* <div className="flex flex-col gap-12 items-center justify-start max-w-[920px] mt-[137px] mx-auto md:px-5 w-full">
           <Text
             className="sm:text-[34px] md:text-[40px] text-[44px] text-gray-900"
             size="txtChivoBold44"
@@ -852,8 +852,8 @@ const PricingPage = () => {
               />
             </div>
             <Line className="bg-bluegray-200 h-px mt-8 w-full" />
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
         <div className="bg-teal-401 flex md:flex-col flex-row md:gap-10 gap-[75px] items-start justify-center max-w-[1112px] mt-[100px] mx-auto pb-[39px] pl-[39px] md:px-5 rounded-md w-full">
           <div className="flex md:flex-1 flex-col items-start justify-start md:ml-[0] ml-[25px] md:mt-0 mt-12 rounded-md w-[45%] md:w-full">
             <Text
