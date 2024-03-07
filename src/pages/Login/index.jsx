@@ -9,7 +9,9 @@ const LoginPage = () => {
   const[userName, setUserName] = useState('');
   const[password, setPassword] = useState('');
   const handleClick = () => {
-    if(userName === 'user' && password === 'password'){
+    let user = localStorage.getItem('email');
+    let pass = localStorage.getItem('password');
+    if(userName === user && password === pass){
       navigate("/Homepage");
       localStorage.setItem('loggedIn','true')
     }else{
@@ -63,12 +65,6 @@ const LoginPage = () => {
                       type="email"
                       onChange={handleUserChange}
                     ></Input>
-                    <Text
-                      className="text-black-900 text-sm"
-                      size="txtChivoRegular18"
-                    >
-                      Default: 'user'
-                    </Text>
                   </div>
                   <div className="flex flex-col gap-[17px] items-start justify-start rounded-md w-full">
                     <Text
@@ -85,12 +81,6 @@ const LoginPage = () => {
                       type="password"
                       onChange={handlePasswordChange}
                     ></Input>
-                    <Text
-                      className="text-black-900 text-sm"
-                      size="txtChivoRegular18"
-                    >
-                      Default: 'password'
-                    </Text>
                   </div>
                 </div>
                 <Button

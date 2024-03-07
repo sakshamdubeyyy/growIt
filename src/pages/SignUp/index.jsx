@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -20,6 +20,32 @@ const forminputFourOptionsList = [
 
 const SignUpPage = () => {
   const navigate = useNavigate();
+  const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleUserInput = (value) => {
+    setFirstName(value);
+  }
+
+  const handleEmailInput = (value) => {
+    setEmail(value)
+  }
+
+  const handlePasswordInput = (value) => {
+    setPassword(value);
+  }
+
+  const handleSubmit = () => {
+    if(email.includes('@') && password.length >= 6){
+    localStorage.setItem('email',`${email}`);
+    localStorage.setItem('firstName',`${firstName}`);
+    localStorage.setItem('password',`${password}`);
+    navigate("/")
+    }else{
+      alert("Enter the details please")
+    }
+  }
 
   return (
     <>
@@ -53,6 +79,7 @@ const SignUpPage = () => {
                       className="p-0 placeholder:text-bluegray-200 text-base text-left w-full"
                       wrapClassName="border border-bluegray-200 border-solid w-full"
                       type="text"
+                      onChange={handleUserInput}
                     ></Input>
                   </div>
                   <div className="flex sm:flex-1 flex-col gap-[17px] items-start justify-start rounded-md w-[47%] sm:w-full">
@@ -84,10 +111,11 @@ const SignUpPage = () => {
                     className="p-0 placeholder:text-bluegray-200 text-base text-left w-full"
                     wrapClassName="border border-bluegray-200 border-solid w-full"
                     type="email"
+                    onChange={handleEmailInput}
                   ></Input>
                 </div>
                 <div className="flex sm:flex-col flex-row gap-8 items-start justify-between mt-6 pt-1.5 rounded-md w-full">
-                  <div className="flex sm:flex-1 flex-col gap-3 items-start justify-start rounded-md w-[47%] sm:w-full">
+                  <div className="flex sm:flex-1 flex-col gap-3 items-start justify-start rounded-md w-[100%] sm:w-full">
                     <Text
                       className="text-black-900 text-lg"
                       size="txtChivoRegular18"
@@ -103,63 +131,23 @@ const SignUpPage = () => {
                       size="lg"
                     ></Input>
                   </div>
-                  <div className="flex sm:flex-1 flex-col gap-3 items-start justify-start rounded-md w-[47%] sm:w-full">
+                </div>
+                <div className="flex sm:flex-1 flex-col gap-3 items-start justify-start rounded-md w-[100%] sm:w-full mt-7">
                     <Text
                       className="text-black-900 text-lg"
                       size="txtChivoRegular18"
                     >
-                      Company size
+                      Password
                     </Text>
-                    <SelectBox
-                      className="border border-bluegray-200 border-solid text-base text-left w-full"
-                      placeholderClassName="text-bluegray-200"
-                      indicator={
-                        <Img
-                          className="h-6 mr-[13px] w-6"
-                          src="images/img_arrowdown.svg"
-                          alt="arrow_down"
-                        />
-                      }
-                      isMulti={false}
-                      name="forminput Four"
-                      options={forminputFourOptionsList}
-                      isSearchable={false}
-                      placeholder="Company Size"
-                      shape="round"
-                      color="white_A700"
-                      size="xs"
-                      variant="fill"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col gap-[17px] items-start justify-start mt-7 w-full">
-                  <Text
-                    className="text-black-900 text-lg"
-                    size="txtChivoRegular18"
-                  >
-                    Phone Number
-                  </Text>
-                  <div className="bg-white-A700 border border-bluegray-200 border-solid flex sm:flex-col flex-row sm:gap-5 items-center justify-start p-2 rounded-md w-full">
-                    <div className="bg-white-A700 flex sm:flex-1 flex-col items-center justify-start ml-2 sm:ml-[0] sm:mt-0 my-[7px] pb-2.5 w-[6%] sm:w-full">
-                      <div className="bg-red-800 h-2.5 w-full"></div>
-                    </div>
-                    <Img
-                      className="h-6 ml-2 sm:ml-[0] w-6"
-                      src="images/img_arrowdown_bluegray_600.svg"
-                      alt="arrowdown"
-                    />
-                    <Line className="bg-gray-200 h-[26px] sm:h-px ml-2 sm:ml-[0] sm:mt-0 my-1 sm:w-full w-px" />
                     <Input
-                      name="frame178"
-                      placeholder="Phone Number"
-                      className="!placeholder:text-bluegray-600 !text-bluegray-600 p-0 text-base text-left w-full"
-                      wrapClassName="sm:flex-1 sm:ml-[0] ml-[7px] w-[76%] sm:w-full"
-                      type="number"
-                      shape="square"
-                      size="xs"
+                      name="FormInput One"
+                      placeholder="Password"
+                      className="p-0 placeholder:text-bluegray-200 text-base text-left w-full"
+                      wrapClassName="border border-bluegray-200 border-solid w-full"
+                      type="password"
+                      onChange={handlePasswordInput}
                     ></Input>
                   </div>
-                </div>
                 <CheckBox
                   className="leading-[26.00px] mt-6 text-base text-left"
                   inputClassName="h-4 mr-[5px] w-4"
@@ -173,6 +161,7 @@ const SignUpPage = () => {
                   color="teal_400"
                   size="xs"
                   variant="fill"
+                  onClick={handleSubmit}
                 >
                   Sign Up
                 </Button>

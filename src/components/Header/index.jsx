@@ -68,7 +68,7 @@ const Header = (props) => {
               className="text-base text-gray-900"
               size="txtChivoBold16Gray900"
             >
-              Welcome user
+              Welcome {localStorage.getItem('firstName')}
             </Text>
             <Link to="/">
             <Button
