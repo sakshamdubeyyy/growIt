@@ -54,7 +54,7 @@ const Header = (props) => {
               About
             </Text>
             </Link>
-            <Link to="/About">
+            <Link to="/Contact">
             <Text
               className="text-base text-gray-900"
               size="txtChivoBold16Gray900"
