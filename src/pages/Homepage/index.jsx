@@ -363,9 +363,10 @@ const HomepagePage = () => {
                         analytics
                       </Text>
                       <Text
-                        className="text-base text-teal-400 underline"
+                        className="text-base text-teal-400 underline cursor-pointer"
                         size="txtChivoBold16"
                         onClick={() => navigate("/About")}
+
                       >
                         Learn More
                       </Text>
