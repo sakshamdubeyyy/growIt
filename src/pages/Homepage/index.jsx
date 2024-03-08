@@ -365,6 +365,7 @@ const HomepagePage = () => {
                       <Text
                         className="text-base text-teal-400 underline"
                         size="txtChivoBold16"
+                        onClick={() => navigate("/About")}
                       >
                         Learn More
                       </Text>
